@@ -121,6 +121,14 @@ vim /etc/pam.d/common-session
 session     required      pam_mkhomedir.so skel=/etc/skel umask=0022
 ```
 
+### Configuring /etc/pam.d/common-password
+
+```shell
+vi /etc/pam.d/common-password
+
+password required pam_deny.so
+```
+
 ### Configuring /etc/nsswitch.conf
 
 ```shell
