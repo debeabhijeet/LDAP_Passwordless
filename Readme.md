@@ -69,6 +69,8 @@ ssh-ldap-pubkey list -b ou=People,dc=example,dc=com -u username
 ```shell
 vim  /etc/ssh/sshd_config 
 
+PubkeyAuthentication yes
+
 AuthorizedKeysCommand /usr/bin/ssh-ldap-pubkey-wrapper
 
 AuthorizedKeysCommandUser root
