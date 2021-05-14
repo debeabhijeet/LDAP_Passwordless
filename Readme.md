@@ -4,13 +4,13 @@
 
 Note for configuring your system as the Ldap server and Ldap client refer to the [Ldap configuration](https://github.com/debeabhijeet/LDAP).
 
-After setting up the Ldap server and client follow the following steps for passwordless authentication using ssh keys.
+After setting up the Ldap server and client follow the following steps for passwordless authentication.
 
-Also Note here that below all things need to be done on ldap client only.
+Also Note that the below all things need to be done on ldap client only.
 
 ## Instalation of program
 
-Now understand that to do ssh key authentication the ldap client needs to fetch the key from the ldap server and to do this we require some kind of script or program. Therefore to help with this challenge we will use python program.
+Now understand that to do passwordless authentication the ldap client needs to fetch the ssh-key from the ldap server and to do this we require some kind of script or program. Therefore to help with this challenge we will use python program.
 
 ```shell
 zypper install python3  python3-pip python3-devel  openldap2-devel  gcc 
