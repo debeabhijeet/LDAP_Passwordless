@@ -6,7 +6,30 @@ Note for configuring your system as the Ldap server and Ldap client refer to the
 
 After setting up the Ldap server and client follow the following steps for passwordless authentication.
 
-Also Note that the below all things need to be done on ldap client only.
+First we need to add the openssh schema to the **LDAP-Server**, So do the Following:
+
+```shell
+vi /etc/openldap/schema/openssh-ldap.ldif
+
+dn: cn=openssh-lpk,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: openssh-lpk
+olcAttributeTypes: ( 1.3.6.1.4.1.24552.500.1.1.1.13 NAME 'sshPublicKey'
+    DESC 'MANDATORY: OpenSSH Public key'
+    EQUALITY octetStringMatch
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+olcObjectClasses: ( 1.3.6.1.4.1.24552.500.1.1.2.0 NAME 'ldapPublicKey' SUP top AUXILIARY
+    DESC 'MANDATORY: OpenSSH LPK objectclass'
+    MAY ( sshPublicKey $ uid )
+    )
+```
+Now Run the following command to include the schema in the ldap.
+
+```shell
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/openssh-ldap.ldif
+```
+
+Note that all the below things need to be done on **LDAP-Client** only.
 
 ## Instalation of program
 
