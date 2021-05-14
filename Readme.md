@@ -34,7 +34,7 @@ vim /usr/bin/ssh-ldap-pubkey
 
 Note Configure the ldap.conf according to your requirement.
 
-After that try to run the ssh-ldap-pubkey manually to see does it fetch key or not.
+After that try to run the ssh-ldap-pubkey manually to see does it fetch key or not. Also be sure that you have added the entry of a user with ssh-key in ldap database
 Following is one way to run the command:
 
 ```shell
