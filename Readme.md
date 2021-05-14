@@ -109,6 +109,7 @@ domains = default
 
 ```shell
 vim /etc/pam.d/sshd
+
 auth    sufficient      pam_ldap.so
 account sufficient      pam_permit.so
 ```
