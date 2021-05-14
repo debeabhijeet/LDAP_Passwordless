@@ -28,6 +28,7 @@ ssh-ldap-pubkey file use ldap.conf file so we need to give the ldap.conf file pa
 
 ```shell
 vim /usr/bin/ssh-ldap-pubkey
+
  DEFAULT_CONFIG_PATH = '/etc/openldap/ldap.conf'
 ```
 
