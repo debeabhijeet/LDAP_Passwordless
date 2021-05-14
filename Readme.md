@@ -148,4 +148,4 @@ systemctl restart sssd nscd sshd
 
 #### Now you can test the setup
 
-For testing create a user on a localsystem then generate ssh keys, open the public key and copy the conent of that key and add that conent on the ldap user's database entry on ldap server. After that try running the ssh-ldap-pubkey program on the ldap client and see if it fetch the key, lets say it fetches then you can try to login from localsystem to the remote ldap client.
+For testing create a user on a localsystem then generate ssh keys, open the public key and copy the content of that key and add that content on the ldap user's database entry on ldap server. After that try running the ssh-ldap-pubkey program on the ldap client and see if it fetch the key, lets say it fetches then you can try to login from localsystem to the remote ldap client.
